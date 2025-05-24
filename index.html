@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EcoCycle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      @keyframes fade-in-left {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./style.css" />
+    <div>
+      <link href="./index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <navbar-wrapper class="navbar-wrapper">
+          <!--Navbar component-->
+          <header class="navbar-container">
+            <header data-thq="thq-navbar" class="navbar-navbar-interactive">
+              <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
+                <nav class="navbar-links1">
+                  <span class="thq-link thq-body-small">
+                    <a href="#about">About</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="#subscription">Subscription Plans</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="#contact">Contact</a>
+                  </span>
+                </nav>
+              </div>
+              <div data-thq="thq-burger-menu" class="navbar-burger-menu">
+                <svg viewBox="0 0 1024 1024" class="navbar-icon1">
+                  <path
+                    d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                  ></path>
+                </svg>
+              </div>
+              <div data-thq="thq-mobile-menu" class="navbar-mobile-menu">
+                <div class="navbar-nav">
+                  <div class="navbar-top">
+                    <img
+                      alt="Bike Rental Business"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/84ec08e8-34e9-42c7-9445-d2806d156403/fac575ac-7a41-484f-b7ac-875042de11f8?org_if_sml=1&amp;force_format=original"
+                      class="navbar-logo"
+                    />
+                    <div data-thq="thq-close-menu" class="navbar-close-menu">
+                      <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                        <path
+                          d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </header>
+        </navbar-wrapper>
+        <hero-wrapper class="hero-wrapper">
+          <!--Hero component-->
+          <div class="hero-header78">
+            <div class="hero-column thq-section-padding thq-section-max-width">
+              <div class="hero-content">
+                <h1 class="hero-text1 thq-heading-1">
+                  <span>Explore Adelaide on Two Wheels</span>
+                </h1>
+                <p class="hero-text2 thq-body-large">
+                  <span>
+                    Welcome to our bike rental service where you can experience
+                    the freedom of cycling through the city streets. Whether you
+                    are looking for an adventure or wanting to start delivering
+                    food, using one of our specialised eBikes. Choose from a
+                    variety of subscription plans to suit your needs.
+                  </span>
+                </p>
+              </div>
+              <div class="hero-actions">
+                <button class="thq-button-outline hero-button">
+                  <span class="thq-body-small"><span>Choose Plan</span></span>
+                </button>
+              </div>
+            </div>
+            <div>
+              <div class="hero-container2">
+                <style>
+                  @keyframes scroll-x {
+                    from {
+                      transform: translateX(0);
+                    }
+                    to {
+                      transform: translateX(calc(-100% - 16px));
+                    }
+                  }
+
+                  @keyframes scroll-y {
+                    from {
+                      transform: translateY(0);
+                    }
+                    to {
+                      transform: translateY(calc(-100% - 16px));
+                    }
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </hero-wrapper>
+        <features1-wrapper class="features1-wrapper">
+          <!--Features1 component-->
+          <div class="thq-section-padding">
+            <div class="features1-container2 thq-section-max-width">
+              <div class="features1-image-container">
+                <img
+                  alt="Bike Rental Business Image"
+                  src="https://images.unsplash.com/photo-1618520593672-e227a9030f5d?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDIxfHxiaWN5Y2xlfGVufDB8fHx8MTc0MzU0MTQ4NHww&amp;ixlib=rb-4.0.3&amp;w=1500"
+                  class="features1-image1 thq-img-ratio-16-9"
+                />
+              </div>
+              <div class="features1-tabs-menu">
+                <div class="features1-tab-horizontal1">
+                  <div class="features1-divider-container1">
+                    <div class="features1-container3"></div>
+                  </div>
+                  <div class="features1-content1"  id="about">
+                    <h2 class="thq-heading-2">
+                      <span>About Our Business</span>
+                    </h2>
+                    <span class="thq-body-small">
+                      <span>
+                        Here at EcoCycle, we love all things
+                        cycling. All our plans include helmets to ensure your
+                        safety and all our bikes are regularly serviced to make
+                        your experience as smooth as possible.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="features1-tab-horizontal2">
+                  <div class="features1-divider-container2">
+                    <div class="features1-container4"></div>
+                  </div>
+                  <div class="features1-content2">
+                    <h2 class="thq-heading-2"><span>Bikes</span></h2>
+                    <span class="thq-body-small">
+                      <span>
+                        We offer both eBikes for the entrepreneurial food
+                        deliverers and city bikes for those who wish to commute
+                        or enjoy a weekend ride with no fuss.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="features1-tab-horizontal3">
+                  <div class="features1-divider-container3">
+                    <div class="features1-container5"></div>
+                  </div>
+                  <div class="features1-content3">
+                    <h2 class="thq-heading-2">
+                      <span>Subscription Plans</span>
+                    </h2>
+                    <span class="thq-body-small">
+                      <span>
+                        Choose from our flexible subscription plans to suit your
+                        biking needs.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </features1-wrapper>
+        <pricing-wrapper class="pricing-wrapper">
+          <!--Pricing component-->
+          <div class="pricing-pricing23 thq-section-padding" id="subscription">
+            <div class="pricing-max-width thq-section-max-width">
+              <div class="pricing-section-title">
+                <span class="pricing-text10 thq-body-small">
+                  <span>Choose the perfect plan for you</span>
+                </span>
+                <div class="pricing-content">
+                  <h2 class="pricing-text11 thq-heading-2">
+                    <span>Pricing plan</span>
+                  </h2>
+                </div>
+              </div>
+              <div class="pricing-container1">
+                <div class="pricing-column1 thq-card">
+                  <div class="pricing-price10">
+                    <div class="pricing-price11">
+                      <p class="pricing-text16 thq-body-large">
+                        <span>Standard plans</span>
+                      </p>
+                      <h3 class="pricing-text17 thq-heading-3">
+                        <span>$35 Month</span>
+                      </h3>
+                      <p>Also offered: $2/hour, $7/day, $18/month</p>
+                    </div>
+                    <div class="pricing-list1">
+                      <div class="pricing-list-item10">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>Unlimited bike rentals</span>
+                        </span>
+                      </div>
+                      <div class="pricing-list-item11">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>24/7 customer support</span>
+                        </span>
+                      </div>
+                      <div class="pricing-list-item12">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>Helmet included</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="pricing-button14 thq-button-outline thq-button-animated subButton"
+                  >
+                    <span class="thq-body-small"><span>Sign Up Now</span></span>
+                  </button>
+                </div>
+                <div class="pricing-column2 thq-card">
+                  <div class="pricing-price12">
+                    <div class="pricing-price13">
+                      <p class="pricing-text23 thq-body-large">
+                        <span>Electric plan</span>
+                      </p>
+                      <h3 class="pricing-text24 thq-heading-3">
+                        <span>$50/month</span>
+                      </h3>
+                      <p>Also offered: $10/day</p>
+                    </div>
+                    <div class="pricing-list2">
+                      <div class="pricing-list-item13">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>All features of Plan 1</span>
+                        </span>
+                      </div>
+                      <div class="pricing-list-item14">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>Priority bike selection</span>
+                        </span>
+                      </div>
+                      <div class="pricing-list-item15">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>eBikes</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="pricing-button15 thq-button-animated thq-button-filled subButton"
+                  >
+                    <span class="thq-body-small"><span>Sign Up Now</span></span>
+                  </button>
+                </div>
+                <div class="pricing-column3 thq-card">
+                  <div class="pricing-price14">
+                    <div class="pricing-price15">
+                      <p class="pricing-text31 thq-body-large">
+                        <span>Electric Gig Worker plan</span>
+                      </p>
+                      <h3 class="pricing-text32 thq-heading-3">
+                        <span>$70/month</span>
+                      </h3>
+                      <p>Also offered: $15/day</p>
+                    </div>
+                    <div class="pricing-list3">
+                      <div class="pricing-list-item17">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>All features of Plan 2</span>
+                        </span>
+                      </div>
+                      <div class="pricing-list-item18">
+                        <svg viewBox="0 0 1024 1024" class="thq-icon-small">
+                          <path
+                            d="M384 690l452-452 60 60-512 512-238-238 60-60z"
+                          ></path>
+                        </svg>
+                        <span class="thq-body-small">
+                          <span>Fully equipped eBikes, ready for gig work</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="pricing-button16 thq-button-animated thq-button-filled subButton"
+                  >
+                    <span class="thq-body-small"><span>Sign Up Now</span></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </pricing-wrapper>
+        <testimonial-wrapper class="testimonial-wrapper">
+          <!--Testimonial component-->
+          <div class="thq-section-padding">
+            <div class="testimonial-max-width thq-section-max-width">
+              <div class="testimonial-container10">
+                <h2 class="thq-heading-2"><span>Testimonials</span></h2>
+                <span class="testimonial-text11 thq-body-small">
+                  <span>
+                    Read what our customers have to say about their experience
+                    with our bike rental service.
+                  </span>
+                </span>
+              </div>
+              <div class="thq-grid-2">
+                <div class="thq-animated-card-bg-2">
+                  <div class="thq-animated-card-bg-1">
+                    <div
+                      data-animated="true"
+                      class="thq-card testimonial-card1"
+                    >
+                      <div class="testimonial-container12">
+                        <img
+                          alt="Image of John Doe"
+                          src="https://images.unsplash.com/photo-1621225756767-a1f724bada28?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MzU0MDMxOXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                          class="testimonial-image1"
+                        />
+                        <div class="testimonial-container13">
+                          <strong class="thq-body-large">
+                            <span>John Doe</span>
+                          </strong>
+                          <span class="thq-body-small">
+                            <span>Marketing Manager</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span class="testimonial-text14 thq-body-small">
+                        <span>
+                          Great bikes, excellent service! Will definitely rent
+                          again.
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="thq-animated-card-bg-2">
+                  <div class="thq-animated-card-bg-1">
+                    <div
+                      data-animated="true"
+                      class="thq-card testimonial-card2"
+                    >
+                      <div class="testimonial-container14">
+                        <img
+                          alt="Image of Jane Smith"
+                          src="https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MzU0MDMyMHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                          class="testimonial-image2"
+                        />
+                        <div class="testimonial-container15">
+                          <strong class="thq-body-large">
+                            <span>Jane Smith</span>
+                          </strong>
+                          <span class="thq-body-small">
+                            <span>Teacher</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span class="testimonial-text17 thq-body-small">
+                        <span>
+                          Affordable prices and a wide selection of bikes to
+                          choose from. Highly recommended!
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="thq-animated-card-bg-2">
+                  <div class="thq-animated-card-bg-1">
+                    <div
+                      data-animated="true"
+                      class="thq-card testimonial-card3"
+                    >
+                      <div class="testimonial-container16">
+                        <img
+                          alt="Image of David Johnson"
+                          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MzU0MDMyMHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                          class="testimonial-image3"
+                        />
+                        <div class="testimonial-container17">
+                          <strong class="thq-body-large">
+                            <span>David Johnson</span>
+                          </strong>
+                          <span class="thq-body-small">
+                            <span>Software Engineer</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span class="testimonial-text20 thq-body-small">
+                        <span>
+                          Smooth booking process and friendly staff. Had a
+                          fantastic biking experience.
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="thq-animated-card-bg-2">
+                  <div class="thq-animated-card-bg-1">
+                    <div
+                      data-animated="true"
+                      class="thq-card testimonial-card4"
+                    >
+                      <div class="testimonial-container18">
+                        <img
+                          alt="Image of Sarah Williams"
+                          src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTc0MzU0MDMxOXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                          class="testimonial-image4"
+                        />
+                        <div class="testimonial-container19">
+                          <strong class="thq-body-large">
+                            <span>Sarah Williams</span>
+                          </strong>
+                          <span class="thq-body-small">
+                            <span>Graphic Designer</span>
+                          </span>
+                        </div>
+                      </div>
+                      <span class="testimonial-text23 thq-body-small">
+                        <span>
+                          Convenient subscription plans that suit my biking
+                          needs perfectly. Thank you!
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </testimonial-wrapper>
+        <contact-wrapper class="contact-wrapper">
+          <!-- Contact component -->
+          <div class="contact-contact20 thq-section-padding" id="contact">
+            <contact-form4-wrapper class="contact-form4-wrapper">
+              <!-- ContactForm4 component -->
+              <div class="contact-form4-contact9 thq-section-padding">
+                <div class="thq-section-max-width thq-flex-row contact-form4-max-width">
+                  <div class="contact-form4-content1 thq-flex-column">
+                    <div class="contact-form4-section-title thq-card">
+                      <span class="thq-body-small">
+                        <fragment class="contact-fragment2">
+                          <span class="contact-text2">
+                            Feel free to reach out to us with any questions or concerns. Our team is here to assist you.
+                          </span>
+                        </fragment>
+                      </span>
+                      <div class="contact-form4-content2">
+                        <h2 class="thq-heading-2">
+                          <fragment class="contact-fragment3">
+                            <span class="contact-text3">Contact Us</span>
+                          </fragment>
+                        </h2>
+                        <span class="thq-body-small">
+                          <fragment class="contact-fragment4">
+                            <span class="contact-text4">
+                              Have a question? Need assistance? Fill out the form below and we'll get back to you as soon as possible.
+                            </span>
+                          </fragment>
+                        </span>
+                      </div>
+                    </div>
+                    <form id="contactForm" class="thq-card">
+                      <div class="contact-form4-input1">
+                        <label for="contact-form-4-name" class="thq-body-small">Name</label>
+                        <input type="text" id="contact-form-4-name" name="name" placeholder="Name" class="thq-input" />
+                      </div>
+                      <div class="contact-form4-input2">
+                        <label for="contact-form-4-email" class="thq-body-small">Email</label>
+                        <input type="email" id="contact-form-4-email" name="email" required="true" placeholder="Email" class="thq-input" />
+                      </div>
+                      <div class="contact-form4-container">
+                        <label for="contact-form-4-message" class="thq-body-small">Message</label>
+                        <textarea id="contact-form-4-message" name="message" rows="3" placeholder="Enter your message" class="thq-input"></textarea>
+                      </div>
+                      <button type="submit" class="contact-form4-button thq-button-filled">
+                        <span class="thq-body-small">
+                          <span class="contact-text1">Contact Customer Support</span>
+                        </span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </contact-form4-wrapper>
+          </div>
+        </contact-wrapper>
+        
+        <!-- Pop-up Modal for Success/Failure Notification -->
+        <div id="popupModal" class="popup-modal">
+          <div class="popup-content">
+            <span id="popupCloseBtn" class="popup-close-btn">&times;</span>
+            <p id="popupMessage"></p>
+          </div>
+        </div>
+        
+        <!-- Styles for the Popup Modal -->
+        <style>
+          .popup-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+          }
+          .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+          }
+          .popup-close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+          }
+        </style>
+        <footer-wrapper class="footer-wrapper">
+          <!--Footer component-->
+          <footer class="footer-footer1 thq-section-padding">
+            <div class="footer-max-width thq-section-max-width">
+              <div class="footer-content">
+                <div class="footer-newsletter">
+                  <span class="thq-body-small">
+                    Subscribe to our newsletter for the latest updates on new
+                    features and product releases.
+                  </span>
+                  <div class="footer-actions">
+                    <div class="footer-form">
+                      <div class="footer-container1">
+                        <input
+                          type="email"
+                          placeholder="Enter your email"
+                          class="footer-text-input thq-input"
+                        />
+                      </div>
+                      <button class="footer-button thq-button-outline">
+                        <span class="thq-body-small"><span>Submit</span></span>
+                      </button>
+                    </div>
+                    <span class="footer-content2 thq-body-small">
+                      <span>
+                        © 2025 EcoCycle. All Rights Reserved.
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="footer-links">
+                  <div class="footer-column1">
+                    <strong class="thq-body-large footer-column1-title">
+                      <span>About Us</span>
+                    </strong>
+                    <div class="footer-footer-links">
+                      <a
+                      href="#about"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      class="thq-body-small"
+                    >
+                      <span>About us</span>
+                    </a>
+                      <a
+                        href="#subscription"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="thq-body-small"
+                      >
+                        <span>Subscription Plans</span>
+                      </a>
+                      <a
+                        href="#contact"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="thq-body-small"
+                      >
+                        <span>Contact Us</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="footer-container2">
+                    <div class="footer-column2"></div>
+                    <div class="footer-column3">
+                      <strong class="thq-body-large footer-social-link1-title">
+                        <span></span>
+                      </strong>
+                      <div class="footer-social-links">
+                        <div class="footer-link6">
+                          <svg
+                            viewBox="0 0 877.7142857142857 1024"
+                            class="thq-icon-small"
+                          >
+                            <path
+                              d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z"
+                            ></path>
+                          </svg>
+                          <span class="thq-body-small">Facebook</span>
+                        </div>
+                        <div class="footer-link7">
+                          <svg
+                            viewBox="0 0 877.7142857142857 1024"
+                            class="thq-icon-small"
+                          >
+                            <path
+                              d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                            ></path>
+                          </svg>
+                          <span class="thq-body-small">Instagram</span>
+                        </div>
+                        <div class="footer-link8">
+                          <svg
+                            viewBox="0 0 950.8571428571428 1024"
+                            class="thq-icon-small"
+                          >
+                            <path
+                              d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                            ></path>
+                          </svg>
+                          <span class="thq-body-small">X</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-credits">
+                <div class="thq-divider-horizontal"></div>
+              </div>
+            </div>
+          </footer>
+        </footer-wrapper>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
